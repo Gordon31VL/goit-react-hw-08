@@ -1,0 +1,12 @@
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 8px;
+}
+
+.btn {
+    width: 80%;
+    border-radius: 10px;
+}

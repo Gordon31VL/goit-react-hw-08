@@ -1,0 +1,24 @@
+.FormBox {
+    width: 256px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    margin: 16px;
+    gap: 8px;
+}
+
+.btn, .textInput {
+    border-radius: 10px;
+}
+
+.btn {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.textInput {
+    height: 32px;
+    padding-left: 8px;
+}

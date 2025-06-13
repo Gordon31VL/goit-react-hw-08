@@ -1,0 +1,6 @@
+.box {
+  width: 256px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

@@ -1,0 +1,14 @@
+.textInput {
+    border-radius: 10px;
+}
+
+.searchBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.textInput {
+    height: 32px;
+    padding-left: 8px;
+}

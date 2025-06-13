@@ -1,0 +1,52 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* HTML і body */
+  html, body {
+    height: 100%;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    background-color: #fff;
+    color: #000;
+  }
+  
+  /* Забрати стилі списків */
+  ul, ol {
+    list-style: none;
+  }
+  
+  /* Зробити зображення адаптивними */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* Поля форм */
+  /* input, button, textarea, select {
+    font: inherit;
+    border: none;
+    outline: none;
+    background: none;
+  } */
+  
+  /* Забрати підкреслення з посилань */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Тіло контейнера */
+  #root {
+    isolation: isolate;
+  }
+  
+  /* Скидання таблиць */
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
