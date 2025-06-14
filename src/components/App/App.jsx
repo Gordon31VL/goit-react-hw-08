@@ -1,29 +1,39 @@
-import ContactForm from '../ContactForm/ContactForm'
-import ContactList from '../ContactList/ContactList'
-import SearchBox from '../SearchBox/SearchBox'
-import './App.css'
-import '../css/reset.css'
+import "../../css/reset.css"
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { fetchContacts } from '../../redux/contactsOps'
-import { selectError, selectLoading } from '../../redux/contactsSlice'
+import { Route, Routes } from 'react-router-dom'
+import HomePage from '../../pages/HomePage/HomePage'
+import RegistrationPage from '../../pages/RegistrationPage/RegistrationPage'
+import LoginPage from '../../pages/LoginPage/LoginPage'
+import ContactsPage from '../../pages/ContactsPage/ContactsPage'
+import { fetchContacts } from '../../redux/contacts/operations'
+import { refreshUser } from '../../redux/auth/operations'
+import { selectUserToken } from '../../redux/auth/selectors'
+import RestrictedRoute from '../RestrictedRoute/RestrictedRoute'
+import PrivateRoute from '../PrivateRoute/PrivateRoute'
+import Layout from '../Layout/Layout'
+
 function App() {
   const dispatch = useDispatch();
-  const loading = useSelector(selectLoading);
-  const error = useSelector(selectError);
+  const userToken = useSelector(selectUserToken);
 
   useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch])
+    if (userToken) {
+      dispatch(refreshUser());
+      dispatch(fetchContacts());
+    }
+  }, [dispatch, userToken])
 
   return (
-    <div className='box'>
-      <ContactForm />
-      <SearchBox />
-      {loading && !error && <b>Request in progress...</b>}
-      <ContactList />
-    </div>
-  )
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="register" element={<RestrictedRoute><RegistrationPage /></RestrictedRoute>} />
+        <Route path="login" element={<RestrictedRoute><LoginPage /></RestrictedRoute>} />
+        <Route path="contacts" element={<PrivateRoute><ContactsPage /></PrivateRoute>} />
+      </Route>
+    </Routes>
+  );
 }
 
 export default App

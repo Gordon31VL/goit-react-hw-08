@@ -1,0 +1,92 @@
+body {
+    background: #f6f8fa;
+    color: #222;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+  }
+  
+  header {
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px 0;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px; 
+  }
+  
+  nav {
+    display: flex;
+    gap: 16px;
+  }
+  
+  a, .nav-link {
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  a.active, .nav-link.active {
+    color: #1565c0;
+    text-decoration: underline;
+  }
+  
+  main {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 24px 0;
+  }
+  
+  button {
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 8px;
+    transition: background 0.2s;
+  }
+  
+  button:hover {
+    background: #1565c0;
+  }
+  
+  input, select, textarea {
+    border: 1px solid #bdbdbd;
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  label {
+    font-weight: 500;
+    margin-bottom: 4px;
+    display: block;
+  }
+  
+  ul {
+    padding-left: 0;
+  }
+  
+  li {
+    margin-bottom: 8px;
+    background: #fff;
+    border-radius: 6px;
+    /* padding: 8px 12px; */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Кнопка буде справа */
+  }
+  
+  li button {
+    /* margin-left: 16px; */
+  }

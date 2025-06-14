@@ -2,12 +2,11 @@ import { Formik, Form, Field } from "formik";
 import { useId } from "react";
 import styles from "./ContactForm.module.css"
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsOps";
+import { addContact } from "../../redux/contacts/operations";
 
 
 export default function ContactForm() {
     const dispatch = useDispatch();
-
     const nameFieldId = useId();
     const numberFieldId = useId();
     const initialValues = {

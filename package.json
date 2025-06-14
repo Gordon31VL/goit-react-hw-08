@@ -14,10 +14,13 @@
     "axios": "^1.9.0",
     "formik": "^2.4.6",
     "formix": "^0.0.1",
+    "install": "^0.13.0",
     "nanoid": "^5.1.5",
+    "npm": "^11.4.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-redux": "^9.2.0",
+    "react-router-dom": "^7.6.2",
     "redux-persist": "^6.0.0",
     "yup": "^1.6.1"
   },
