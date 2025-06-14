@@ -1,11 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { apiConnectionUrl } from "../axiosOptions";
 
-axios.defaults.baseURL = import.meta.env.VITE_BACKEND_DEFAULT_URL
 
 export const fetchContacts = createAsyncThunk("contacts/fetchAll", async (_, thunkApi) => {
     try {
-        const response = await axios.get("/contacts");
+        const response = await apiConnectionUrl.get("/contacts");
         return response.data;
     } catch (error) {
         return thunkApi.rejectWithValue(error.message)
@@ -14,7 +13,7 @@ export const fetchContacts = createAsyncThunk("contacts/fetchAll", async (_, thu
 
 export const addContact = createAsyncThunk("contacts/addContacts", async (contact, thunkApi) => {
     try {
-        const response = await axios.post("/contacts", contact);
+        const response = await apiConnectionUrl.post("/contacts", contact);
         return response.data;
     } catch (error) {   
         return thunkApi.rejectWithValue(error.message)
@@ -23,7 +22,7 @@ export const addContact = createAsyncThunk("contacts/addContacts", async (contac
 
 export const deleteContact = createAsyncThunk("contacts/deleteContact", async (id, thunkApi) => {
     try {
-        const response = await axios.delete(`/contacts/${id}`)
+        const response = await apiConnectionUrl.delete(`/contacts/${id}`)
         return response.data
     } catch (error) {
         return thunkApi.rejectWithValue(error.message)

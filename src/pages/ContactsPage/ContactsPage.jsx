@@ -5,7 +5,7 @@ import SearchBox from "../../components/SearchBox/SearchBox"
 import ContactList from "../../components/ContactList/ContactList";
 import contactsPageCss from "./ContactsPage.module.css"
 
-export default function TasksPage() {
+export default function ContactsPage() {
     const loading = useSelector(selectLoading);
     const error = useSelector(selectError);
 
