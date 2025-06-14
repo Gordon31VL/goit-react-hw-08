@@ -7,7 +7,6 @@ export default function LoginPage() {
 
     const handleLogin = (values) => {
         dispatch(loginUser(values));
-        console.log(values);
     };
     
     return (

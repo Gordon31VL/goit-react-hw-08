@@ -6,7 +6,6 @@ axios.defaults.baseURL = import.meta.env.VITE_BACKEND_DEFAULT_URL
 export const fetchContacts = createAsyncThunk("contacts/fetchAll", async (_, thunkApi) => {
     try {
         const response = await axios.get("/contacts");
-        console.log(response.data);
         return response.data;
     } catch (error) {
         return thunkApi.rejectWithValue(error.message)
